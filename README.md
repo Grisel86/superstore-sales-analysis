@@ -106,7 +106,7 @@ This project reflects a **QA-first mindset**:
 ## 👩‍💻 Author
 
 **Fabiana Grisel González**  
-QA Automation Engineer → Data Scientist  
+ Data Scientist / QA Automation Engineer 
 [LinkedIn](https://www.linkedin.com/in/fabiana-grisel-gonzalez) · [GitHub](https://github.com/Grisel86)
 
 ---
