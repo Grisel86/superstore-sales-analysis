@@ -1,0 +1,7 @@
+
+echo ".idea/
+__pycache__/
+*.pyc
+.venv/
+uv.lock
+data/raw/*.csv" > .gitignore
