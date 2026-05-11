@@ -9,6 +9,7 @@ simulating a real-world retail analytics scenario.
 ![SciPy](https://img.shields.io/badge/SciPy-1.11%2B-8CAAE6?logo=scipy&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![CI](https://github.com/Grisel86/superstore-sales-analysis/actions/workflows/ci.yml/badge.svg)
 
 ---
 
