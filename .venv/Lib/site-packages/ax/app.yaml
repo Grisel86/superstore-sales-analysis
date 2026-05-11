@@ -1,0 +1,78 @@
+# # Used in Google app engine configuration
+# runtime: python37
+# env: standard
+# api_version: 1
+# threadsafe: true
+# service: test
+# entrypoint: gunicorn main:app --bind 0.0.0.0:8080 --worker-class sanic.worker.GunicornWorker
+
+# handlers:
+#   - url: /static
+#     static_dir: dist/static/
+#   - url: /.*
+#     script: auto
+
+env_variables:
+  AX_VERSION: 0.36.0
+  AX_DB_REVISION: 9b898740929f
+
+  # AX_DB_DIALECT: postgre # sqlite, postgre, mysql. Default is sqlite
+  # AX_DB_HOST: 127.0.0.1
+  # AX_DB_PORT: '5432'
+  # AX_DB_LOGIN: postgres
+  # AX_DB_PASSWORD: Cnuds644
+  # AX_DB_DATABASE: media
+
+  # AX_HOST: 0.0.0.0 #  default = 127.0.0.1
+  # AX_PORT: "8085" #  default = 8080
+  # AX_SANIC_DEBUG: true #  default=false
+  # AX_SANIC_ACCESS_LOG:  #  default=false
+  # AX_SANIC_WORKERS: 1 # default=1 . On Windoes 1 is max!
+
+  # AX_CACHE_MODE: "" # ' default='default'. Set 'redis' for redis
+  # AX_REDIS_ENDPOINT:  #  default='127.0.0.1'
+  # AX_REDIS_PORT:  #  default='6379'
+  # AX_REDIS_TIMEOUT:  #  default='1'
+  AX_TIMEZONE: Europe/Moscow #  default=UTC
+  AX_LOGS_LEVEL: DEBUG # ERROR, WARNING, INFO, DEBUG. default = ERROR
+  AX_LOGS_FILENAME: ax_logs.log #  If not set, logs only output to stdio
+  # AX_LOGS_ABSOLUTE_PATH: '/home/wineuser/.local/lib/python3.6/site-packages/ax/' #  default =
+
+  # AX_DB_DIALECT: postgre   # sqlite, postgre, mysql. Default is sqlite
+  # AX_DB_HOST: 84.201.174.246
+  # AX_DB_PORT: '5432'
+  # AX_DB_LOGIN: postgres
+  # AX_DB_PASSWORD: 123456
+  # AX_DB_DATABASE: wine
+  # AX_DB_SQLITE_FILENAME: "wine.db" #  default='ax_sqlite.db
+  # AX_DB_SQLITE_ABSOLUTE_PATH: "C:\\Users\\enf64_000\\Desktop\\Dimiant\\WineProject\\Archive" #  default=None
+  # AX_LOCALE: ru # default=en
+  # AX_TMP_ABSOLUTE_PATH: '/tmp' #'D:\Projects\tmp'
+  # AX_UPLOADS_ABSOLUTE_PATH: '/tmp/uploads'
+  AX_UPLOADS_MAX_FILESIZE: 4294967
+
+  # SSL_CERT_ABSOLUTE_PATH: C:\Users\enf64_000\Desktop\AX\Ssl\localhost.pem
+  # SSL_KEY_ABSOLUTE_PATH: C:\Users\enf64_000\Desktop\AX\Ssl\localhost-key.pem
+
+  #  ----------- local bd -
+  AX_DB_DIALECT: postgre # sqlite, postgre, mysql. Default is sqlite
+  AX_DB_HOST: 127.0.0.1
+  AX_DB_PORT: '5432'
+  AX_DB_LOGIN: postgres
+  AX_DB_PASSWORD: Cnuds644
+  AX_DB_DATABASE: axTest1
+
+  AX_SMTP_HOST: smtp.yandex.com
+  AX_SMTP_PORT: 465 # default is 465
+  AX_SMTP_SSL: true # defualt is False
+  AX_SMTP_LOGIN: info@winepower.ru
+  AX_SMTP_PASSWORD: Sdgs2019
+
+  AX_URL: http://127.0.0.1:8081 # Used in email urls
+
+  AX_AUTH_SECRET: This is big secret, please change me
+
+  STRIPE_API_VERSION: '2019-11-05'
+  STRIPE_SECRET_KEY: sk_test_Mqbmdyo8dRyPGdkJq31tvb7y00bk4YHj7V
+  STRIPE_PUBLISHABLE_KEY: pk_test_ek8JDpu65MSXcSn1sAvHBfH800SJKrcVP6
+  # AX_LICENSE: 1c85b4ed-5954-4b9d-a3b6-a5c100a843ee#1609545600#15##EEjAv8vM89WO0GDGwDgSarskvR80FvugcJz+NYlfGFyulzzcbbwV6mp6jd8O8mOGlTFx9DX3RbQ8n62juWm/dg==

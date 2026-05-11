@@ -3,6 +3,7 @@ name = "superstore-sales-analysis"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
+    "ax>=0.36.0",
     "matplotlib>=3.10.9",
     "pandas>=3.0.2",
     "seaborn>=0.13.2",

@@ -3,10 +3,19 @@
 # **Proyecto:** Superstore Sales Analysis  
 # **Dataset:** Superstore Sales (sintético, estructura idéntica a Kaggle)  
 # **Objetivo:** Entender la estructura, calidad y distribución del dataset antes de cualquier análisis.
-
+import math
 # %%
 import sys, os
-sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+
+import ax
+
+if "__file__" in globals():
+    sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+else:
+    sys.path.append("..")
+from matplotlib.ticker import FuncFormatter
+ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f"${x:,.0f}"))
+
 
 import pandas as pd
 import numpy as np
@@ -90,7 +99,10 @@ for ax, col in zip(axes.flatten(), cat_cols):
     ax.set_xlabel("Count")
     ax.set_ylabel("")
 
-axes.flatten()[-1].set_visible(False)  # ocultar el 6to subplot vacío
+fig, axes = plt.subplots(
+    nrows=math.ceil(len(cat_cols)/3), ncols=3, figsize=(18, 10)
+)
+
 plt.tight_layout()
 save_fig(fig, "02_categorical_distributions")
 plt.show()
@@ -99,10 +111,8 @@ plt.show()
 # ## 5. Análisis temporal — ¿cuándo se vende más?
 
 # %%
-df["Year"]    = df["Order Date"].dt.year
-df["Month"]   = df["Order Date"].dt.month
-df["Quarter"] = df["Order Date"].dt.to_period("Q").astype(str)
-df["YearMonth"] = df["Order Date"].dt.to_period("M")
+df["Order Date"] = pd.to_datetime(df["Order Date"], errors="coerce")
+df["Ship Date"]  = pd.to_datetime(df["Ship Date"], errors="coerce")
 
 monthly = (
     df.groupby(["Year", "Month"])["Sales"]
@@ -126,7 +136,7 @@ for year, grp in monthly.groupby("Year"):
 ax.set_title("Monthly Sales Trend by Year", fontsize=15, fontweight="bold")
 ax.set_xlabel("Month")
 ax.set_ylabel("Sales (USD)")
-ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"${x:,.0f}"))
+ax.yaxis.set_major_formatter((lambda x, _: f"${x:,.0f}"))
 ax.legend(title="Year")
 plt.tight_layout()
 save_fig(fig, "03_monthly_sales_trend")

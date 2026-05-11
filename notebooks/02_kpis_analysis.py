@@ -2,6 +2,7 @@
 # # 02 · KPIs & Business Analysis
 # **Objetivo:** Calcular los KPIs clave del negocio y analizar performance por categoría,
 # segmento, región y producto.
+import os
 import sys
 
 # %%

@@ -8,6 +8,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+from pandas import DataFrame
+from pandas.io.parsers import TextFileReader
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 ROOT         = Path(__file__).resolve().parents[1]
@@ -37,7 +39,7 @@ def set_style():
 
 # ── Carga y validación ────────────────────────────────────────────────────────
 
-def load_data(path: Path = DATA_RAW) -> pd.DataFrame:
+def load_data(path: Path = DATA_RAW) -> TextFileReader | DataFrame:
     """Carga el dataset y castea tipos."""
     df = pd.read_csv(path, parse_dates=["Order Date", "Ship Date"])
     return df

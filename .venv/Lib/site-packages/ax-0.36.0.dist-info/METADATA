@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: ax
+Version: 0.36.0
+Summary: Ax - workflow apps builder
+Home-page: https://github.com/enf644/ax
+Author: Mikhail Marenov
+Author-email: enf644@gmail.com
+License: COMMERCIAL
+Platform: UNKNOWN
+Classifier: License :: Other/Proprietary License
+Classifier: Topic :: Office/Business :: Groupware
+Classifier: Topic :: Software Development
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 1 - Planning
+Description-Content-Type: text/markdown
+Requires-Dist: sanic
+Requires-Dist: Sanic-GraphQl
+Requires-Dist: Sanic-Cors
+Requires-Dist: sanic-compress
+Requires-Dist: SQLAlchemy
+Requires-Dist: sqlalchemy-utils
+Requires-Dist: alembic
+Requires-Dist: psycopg2
+Requires-Dist: graphene
+Requires-Dist: graphene-sqlalchemy
+Requires-Dist: graphql-core
+Requires-Dist: graphql-relay
+Requires-Dist: graphql-ws
+Requires-Dist: aiocache[redis]
+Requires-Dist: aiopubsub
+Requires-Dist: APScheduler
+Requires-Dist: pyyaml
+Requires-Dist: ruamel.yaml
+Requires-Dist: typing
+Requires-Dist: ujson
+Requires-Dist: loguru
+Requires-Dist: docopt
+Requires-Dist: dotmap
+Requires-Dist: aiosmtplib
+Requires-Dist: sanic-jwt
+Requires-Dist: passlib
+Requires-Dist: markdown2
+Requires-Dist: python-dateutil
+Requires-Dist: gunicorn
+Requires-Dist: rsa
+Requires-Dist: stripe
+Requires-Dist: pyquery
+Requires-Dist: lxml
+Requires-Dist: openpyxl
+Requires-Dist: aiohttp
+Requires-Dist: aiofiles
+
+This is readme for Ax workflow application builder.
+
+
