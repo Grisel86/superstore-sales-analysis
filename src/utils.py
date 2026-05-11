@@ -3,12 +3,11 @@ src/utils.py
 Funciones reutilizables para el análisis de ventas.
 """
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.ticker as mticker
-import seaborn as sns
 from pathlib import Path
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 ROOT         = Path(__file__).resolve().parents[1]
