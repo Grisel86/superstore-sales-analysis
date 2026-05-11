@@ -1,11 +1,18 @@
 [project]
 name = "superstore-sales-analysis"
 version = "0.1.0"
-requires-python = ">=3.14"
+requires-python = ">=3.10"
 dependencies = [
-    "ax>=0.36.0",
-    "matplotlib>=3.10.9",
-    "pandas>=3.0.2",
-    "pytest>=9.0.3",
-    "seaborn>=0.13.2",
+    "matplotlib>=3.7.0",
+    "pandas>=2.0.0",
+    "seaborn>=0.12.0",
+    "scipy>=1.11.0",
+    "numpy>=1.24.0",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+verbosity = 1
+
+[tool.ruff]
+line-length = 120
