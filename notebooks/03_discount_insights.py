@@ -4,15 +4,15 @@
 # identificar patrones de pérdida y generar recomendaciones de negocio accionables.
 
 # %%
-import sys, os
+import sys
+import os
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
-import seaborn as sns
-from scipy import stats
+import pandas as pd  # noqa: E402
+import numpy as np  # noqa: E402
+import matplotlib.pyplot as plt  # noqa: E402
+import seaborn as sns  # noqa: E402
+from scipy import stats  # noqa: E402
 
 from src.utils import load_data, set_style, save_fig
 

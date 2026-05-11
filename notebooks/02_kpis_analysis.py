@@ -2,19 +2,16 @@
 # # 02 · KPIs & Business Analysis
 # **Objetivo:** Calcular los KPIs clave del negocio y analizar performance por categoría,
 # segmento, región y producto.
-import os
-import sys
 
 # %%
-BASE_DIR = os.path.abspath(os.path.join(os.getcwd(), ".."))
-if BASE_DIR not in sys.path:
-    sys.path.insert(0, BASE_DIR)
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-import seaborn as sns
+import numpy as np  # noqa: E402
+import matplotlib.pyplot as plt  # noqa: E402
+import matplotlib.patches as mpatches  # noqa: E402
+import seaborn as sns  # noqa: E402
 
 from src.utils import (load_data, compute_kpis, print_kpis,
                         set_style, save_fig)

@@ -8,14 +8,13 @@
 # 4. Shipping Mode Profitability — rentabilidad real por modo de envío
 
 # %%
-import sys, os
+import sys
+import os
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-import seaborn as sns
+import numpy as np  # noqa: E402
+import matplotlib.pyplot as plt  # noqa: E402
+import matplotlib.patches as mpatches  # noqa: E402
 
 from src.utils import load_data, set_style, save_fig
 
@@ -57,10 +56,14 @@ median_margin  = subcat["Margin"].median()
 def label_quadrant(row):
     high_rev = row["Revenue"] > median_revenue
     high_mar = row["Margin"]  > median_margin
-    if   high_rev and high_mar:     return "Star"
-    elif high_rev and not high_mar: return "Question Mark"
-    elif not high_rev and high_mar: return "Cash Cow"
-    else:                           return "Dog"
+    if high_rev and high_mar:
+        return "Star"
+    elif high_rev and not high_mar:
+        return "Question Mark"
+    elif not high_rev and high_mar:
+        return "Cash Cow"
+    else:
+        return "Dog"
 
 subcat["Quadrant"] = subcat.apply(label_quadrant, axis=1)
 
@@ -186,7 +189,7 @@ top20 = customer_rev.head(20).copy()
 top20["Label"] = [f"C-{i+1}" for i in range(len(top20))]
 bars = ax2.barh(top20["Label"][::-1], top20["Revenue"][::-1],
                 color="#4C9BE8", edgecolor="white", alpha=0.85)
-ax2.set_title(f"Top 20 Customers by Revenue")
+ax2.set_title("Top 20 Customers by Revenue")
 ax2.set_xlabel("Total Revenue (USD)")
 ax2.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"${x:,.0f}"))
 for bar in bars:
@@ -197,7 +200,7 @@ plt.tight_layout()
 save_fig(fig, "16_pareto_revenue")
 plt.show()
 
-print(f"\n📌 Pareto Finding:")
+print("\n📌 Pareto Finding:")
 print(f"   → Top {threshold_80:.0f}% of customers ({n_top:,} customers) generate 80% of total revenue")
 print(f"   → Total customers: {len(customer_rev):,}")
 print(f"   → Top customer revenue: ${customer_rev['Revenue'].iloc[0]:,.2f}")
@@ -265,7 +268,7 @@ ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"{x:.1f}%"))
 
 # Patch legend
 high_patch = mpatches.Patch(color="#52C47A", label=f"Above median margin ({median_mar_state:.1f}%)")
-low_patch  = mpatches.Patch(color="#F26B6B", label=f"Below median margin")
+low_patch  = mpatches.Patch(color="#F26B6B", label="Below median margin")
 ax.legend(handles=[high_patch, low_patch], fontsize=8, loc="lower right")
 
 # --- Chart 2: Stacked horizontal bar — Revenue with margin label ---

@@ -28,7 +28,7 @@ jobs:
         run: pip install ruff
 
       - name: Run linter
-        run: ruff check src/ notebooks/ data/ --ignore E501
+        run: ruff check src/ notebooks/ data/ --ignore E501,E402
 
   # ── Job 2: Unit Tests ────────────────────────────────────────────────────────
   # Genera el dataset y corre pytest contra src/utils.py.
